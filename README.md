@@ -54,6 +54,12 @@ live-demo: ```https://placeholder.com```
 + make a [reddit developer account](https://www.reddit.com/)
 + create a [reddit script app](https://www.reddit.com/prefs/apps/)
 + store the api keys ,username & password in environment variable
+``` 
+    CLIENT_ID='client id from the app' 
+    CLIENT_SECRET='client secret from the app' 
+    USER_NAME='your reddit username' 
+    USER_PASS='your reddit password' 
+```
 
 ###### clone repo and run
 + clone the repository 
