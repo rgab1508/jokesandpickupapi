@@ -66,8 +66,7 @@ live-demo: ```https://placeholder.com```
     ``` git clone https://github.com/rgab1508/jokeandpickupapi ```
 + ```cd jokeandpickupapi```
 + ```pip install -r requirements.txt```
-+ set FLASK_APP=server.js in environment variable
-+ ``` flask run ```
++ ```python server.py```
 
 ### dependencies 
 + ```flask```
