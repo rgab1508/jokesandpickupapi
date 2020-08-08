@@ -51,8 +51,8 @@ live-demo: ```https://placeholder.com```
 
 ##### Run the server yourself
 ###### setting reddit account && getting api keys
-+ make a [reddit developer account](http://reddit.com/dev)
-+ create a [reddit script app](https://reddit.com/)
++ make a [reddit developer account](https://www.reddit.com/)
++ create a [reddit script app](https://www.reddit.com/prefs/apps/)
 + store the api keys ,username & password in environment variable
 
 ###### clone repo and run
