@@ -111,4 +111,4 @@ def get_pickup_rising(time_filter, limit=DEFAULT_LIMIT):
     return pickups
 
 
-print(get_pickup_controversial('all'))
+#print(get_pickup_controversial('all'))

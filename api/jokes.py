@@ -6,7 +6,7 @@ DEFAULT_LIMIT = 10
 CLIENT_ID = os.environ["R_CLIENT_ID"]
 CLIENT_SECRET = os.environ["R_CLIENT_SECRET"]
 USER_NAME = os.environ["R_USER_NAME"]
-USER_PASS = os.environ[("R_USER_PASS"]
+USER_PASS = os.environ["R_USER_PASS"]
 
 r = praw.Reddit(client_id=CLIENT_ID, client_secret=CLIENT_SECRET, username=USER_NAME, password=USER_PASS, user_agent='Test script')
 
@@ -111,4 +111,4 @@ def get_joke_top(time_filter, limit=DEFAULT_LIMIT):
 
 
 #if __name__ == "__main__":
-print(get_joke_top('day' ,limit=7))
+#print(get_joke_top('day' ,limit=7))
