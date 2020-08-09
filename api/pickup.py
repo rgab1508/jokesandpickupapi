@@ -12,6 +12,24 @@ r = praw.Reddit(client_id=CLIENT_ID, client_secret=CLIENT_SECRET, username=USER_
 
 pickup_sub = list(r.user.subreddits())[2]
 
+def get_pickup_from_id(_id):
+    r_pk = r.submission(_id)
+    
+    pickup = {
+        "id": r_pk.id,
+        "url": r_pk.url,
+        "name": r_pk.name,
+        "upvote_ratio":r_pk.upvote_ratio,
+        "over_18": r_pk.over_18,
+        "title": r_pk.title,
+        "body": r_pk.selftext
+    }
+    
+    return pickup
+
+
+
+
 def get_pickup_random():
     r_pk = pickup_sub.random()
     
@@ -26,6 +44,7 @@ def get_pickup_random():
     }
     
     return pickup
+
 
 def get_pickup_top(time_filter, limit=DEFAULT_LIMIT):
     r_pk = pickup_sub.top(time_filter, limit=limit)
@@ -47,6 +66,8 @@ def get_pickup_top(time_filter, limit=DEFAULT_LIMIT):
         
     return pickups
 
+
+
 def get_pickup_controversial(time_filter, limit=DEFAULT_LIMIT):
     r_pk = pickup_sub.controversial(time_filter, limit=limit)
     
@@ -66,6 +87,28 @@ def get_pickup_controversial(time_filter, limit=DEFAULT_LIMIT):
         pickups.append(p)
     
     return pickups
+
+
+def get_pickup_hot(limit=DEFAULT_LIMIT):
+    r_pk = pickup_sub.hot(limit=limit)
+    
+    pickups = [] 
+    
+    for pk in r_pk:
+        p = {
+            "id": pk.id,
+            "url": pk.url,
+            "name": pk.name,
+            "upvote_ratio":pk.upvote_ratio,
+            "over_18": pk.over_18,
+            "title": pk.title,
+            "body": pk.selftext
+        }
+        
+        pickups.append(p)
+    
+    return pickups
+
 
 
 def get_pickup_new(limit=DEFAULT_LIMIT):
