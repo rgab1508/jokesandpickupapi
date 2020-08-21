@@ -143,5 +143,3 @@ def pickup_rising_limit(time_filter, limit):
     return json.dumps(get_pickup_rising(time_filter, limit=limit))
 
 
-
-app.run()
