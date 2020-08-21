@@ -1,4 +1,0 @@
-export R_CLIENT_ID=bk2IZCqq1DU0iw
-export R_CLIENT_SECRET=LJCwK7SukRHf5YGIg7pDvU6YeJg
-export R_USER_NAME=jokesnpickupalinepi
-export R_USER_PASS=_jokesandpickuplineapi01###_
