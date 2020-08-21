@@ -2,7 +2,7 @@
 --------------------------
 This API returns jokes and pickuplines form [r/Jokes](https://www.reddit.com/r/Jokes) and [r/pickuplines](https://www.reddit.com/r/pickuplines)
 
-live-demo: ```https://placeholder.com```
+live-demo: ```https://jokeandpickupapi.herokuapp.com/```
 
 ### Parameters
 
@@ -12,7 +12,7 @@ live-demo: ```https://placeholder.com```
 | ```limit```       | Limit the number of post to return |     No   |```10```  | ```Interger```                              |
 
 ### Endpoints
-``` base_url: https://placeholder.com ```
+``` base_url: https://jokeandpickupapi.herokuapp.com/```
 
 #### Jokes
 |     Endpoint                                   |     Description                     | Status |
