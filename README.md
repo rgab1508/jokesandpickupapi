@@ -2,7 +2,7 @@
 --------------------------
 This API returns jokes and pickuplines form [r/Jokes](https://www.reddit.com/r/Jokes) and [r/pickuplines](https://www.reddit.com/r/pickuplines)
 
-live-demo: ```https://jokeandpickupapi.herokuapp.com/```
+live-demo: https://jokeandpickupapi.herokuapp.com/
 
 ### Parameters
 
@@ -35,7 +35,7 @@ live-demo: ```https://jokeandpickupapi.herokuapp.com/```
 
 #### Example
 
-``` GET https://placeholder.com/api/joke/random ```
+``` GET https://jokeandpickupapi.herokuapp.com/joke/random ```
 ``` Response 
     {
           "id": "i5tz0f", 
