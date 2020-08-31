@@ -2,7 +2,7 @@
 --------------------------
 This API returns jokes and pickuplines form [r/Jokes](https://www.reddit.com/r/Jokes) and [r/pickuplines](https://www.reddit.com/r/pickuplines)
 
-live-demo: ```https://placeholder.com```
+live-demo: https://jokeandpickupapi.herokuapp.com/
 
 ### Parameters
 
@@ -12,7 +12,7 @@ live-demo: ```https://placeholder.com```
 | ```limit```       | Limit the number of post to return |     No   |```10```  | ```Interger```                              |
 
 ### Endpoints
-``` base_url: https://placeholder.com ```
+``` base_url: https://jokeandpickupapi.herokuapp.com/```
 
 #### Jokes
 |     Endpoint                                   |     Description                     | Status |
@@ -35,16 +35,16 @@ live-demo: ```https://placeholder.com```
 
 #### Example
 
-``` GET https://placeholder.com/api/joke/random ```
-``` Response 
+``` GET https://jokeandpickupapi.herokuapp.com/joke/random ```
+``` Response
     {
-          "id": "i5tz0f", 
+          "id": "i5tz0f",
           "url": "https://www.reddit.com/r/Jokes/comments/i5tz0f/how_dare_the_government_infringe_on_my_freedoms/",
-          "upvote_ratio": 0.67, 
-          "over_18": false, 
-          "name": "t3_i5tz0f", 
+          "upvote_ratio": 0.67,
+          "over_18": false,
+          "name": "t3_i5tz0f",
           "title": "How dare the Government infringe on my freedoms by forcing me to wear a bit of cloth covering a part of my
-          body...", 
+          body...",
           "body": "Nudists unite!"
     }
 ```
@@ -54,22 +54,20 @@ live-demo: ```https://placeholder.com```
 + make a [reddit developer account](https://www.reddit.com/)
 + create a [reddit script app](https://www.reddit.com/prefs/apps/)
 + store the api keys ,username & password in environment variable
-``` 
-    CLIENT_ID='client id from the app' 
-    CLIENT_SECRET='client secret from the app' 
-    USER_NAME='your reddit username' 
-    USER_PASS='your reddit password' 
+```
+    CLIENT_ID='client id from the app'
+    CLIENT_SECRET='client secret from the app'
+    USER_NAME='your reddit username'
+    USER_PASS='your reddit password'
 ```
 
 ###### clone repo and run
-+ clone the repository 
++ clone the repository
     ``` git clone https://github.com/rgab1508/jokeandpickupapi ```
 + ```cd jokeandpickupapi```
 + ```pip install -r requirements.txt```
 + ```python server.py```
 
-### dependencies 
+### dependencies
 + ```flask```
 + ```praw```
-
-
