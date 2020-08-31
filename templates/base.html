@@ -11,8 +11,13 @@
     </head>
 
     <body>
+	<header>
+		{% block header %}{% endblock %}
+	<header>
+	{% block content %}
 
-      <!--JavaScript at end of body for optimized loading-->
-      <script type="text/javascript" src="js/materialize.min.js"></script>
+	{% endblock %}
+     
+	<script type="text/javascript" src="js/materialize.min.js"></script>
     </body>
   </html>
