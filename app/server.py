@@ -4,6 +4,8 @@ from flask import Flask
 from api.jokes import get_joke_from_id, get_joke_random, get_joke_top,get_joke_hot, get_joke_controversial, get_joke_rising, get_joke_new
 from api.pickup import get_pickup_from_id, get_pickup_random, get_pickup_top,get_pickup_hot, get_pickup_controversial, get_pickup_rising, get_pickup_new
 
+import api
+
 app = Flask(__name__)
 
 ###### INDEX ROUTE ######
@@ -143,5 +145,3 @@ def pickup_rising_limit(time_filter, limit):
     return json.dumps(get_pickup_rising(time_filter, limit=limit))
 
 
-
-app.run()
