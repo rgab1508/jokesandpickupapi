@@ -36,7 +36,9 @@ live-demo: https://jokeandpickupapi.herokuapp.com/
 #### Example
 
 ``` GET https://jokeandpickupapi.herokuapp.com/joke/random ```
-``` Response
+
+
+``` Response 
     {
           "id": "i5tz0f",
           "url": "https://www.reddit.com/r/Jokes/comments/i5tz0f/how_dare_the_government_infringe_on_my_freedoms/",
