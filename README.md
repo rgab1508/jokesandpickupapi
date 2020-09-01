@@ -68,7 +68,7 @@ live-demo: https://jokeandpickupapi.herokuapp.com/
     ``` git clone https://github.com/rgab1508/jokeandpickupapi ```
 + ```cd jokeandpickupapi```
 + ```pip install -r requirements.txt```
-+ ```python server.py```
++ ```gunicorn wsgi:app```
 
 ### dependencies
 + ```flask```
