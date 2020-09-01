@@ -1,5 +1,5 @@
 import json
-from flask import Flask
+from flask import Flask, request, render_template
 
 from api.jokes import get_joke_from_id, get_joke_random, get_joke_top,get_joke_hot, get_joke_controversial, get_joke_rising, get_joke_new
 from api.pickup import get_pickup_from_id, get_pickup_random, get_pickup_top,get_pickup_hot, get_pickup_controversial, get_pickup_rising, get_pickup_new
@@ -11,8 +11,7 @@ app = Flask(__name__)
 ###### INDEX ROUTE ######
 @app.route('/')
 def index():
-	return 'Hello from Joke & Pickup line API'
-
+    return render_template("home/index.html")
 
 ###########################
 ##      JOKES ROUTES     ##
