@@ -19,23 +19,45 @@ Home
 			<div class="input-field col s12 m9">
    					 <select class="url-select" >
       					<option value="" disabled selected>Choose your option</option>
-     					 <option value="1">Option 1</option>
-     					 <option value="2">Option 2</option>
-     					 <option value="3">Option 3</option>
+					{% if context.urls %}
+						{% for u in context.urls %}
+						<option value="{{ u.url }}">{{ u.name }}</option>
+						 {% endfor %}
+					{% endif %}
    					 </select>
  			 </div>
 			 
 			 <input type="submit" class="btn black" value="Send">
 		<div>
+
+		<div class="cur-url">
+			<p></p>
+		</div>
 		<div class="response-div">
 		<div>
 	<div>
 		
 </div>
+<style>
+
+.cur-url {
+	height: 40px;
+	background-color: rgb(51,51,51);
+	padding: 5px;
+	color: rgb(255,255,255);
+}
+
+</style>
 	<script>
 		document.addEventListener('DOMContentLoaded', function() {
-                  let elems = document.querySelectorAll('.url-select');
-                  let instances = M.FormSelect.init(elems);
-                })
+                  let urlSelectNode = document.querySelectorAll('.url-select');
+                  let instances = M.FormSelect.init(urlSelectNode);
+	 	
+	          let urlSelect = document.querySelector(".url-select");
+		  let curUrl = document.querySelector(".cur-url");
+		  urlSelect.addEventListener("change",  function(e){
+			  curUrl.innerHTML = this.value;
+	          });
+                });
 	</script>
 {% endblock %}
