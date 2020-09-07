@@ -12,5 +12,30 @@ Home
 {% block content %}
 <div class="container">
 	<h1> Joke & pickup Line api</h1>
+	<div class="playground">
+		<h3>Live Demo</h3>
+		<div class="url-div">
+			<p> Endpoints </p>
+			<div class="input-field col s12 m9">
+   					 <select class="url-select" >
+      					<option value="" disabled selected>Choose your option</option>
+     					 <option value="1">Option 1</option>
+     					 <option value="2">Option 2</option>
+     					 <option value="3">Option 3</option>
+   					 </select>
+ 			 </div>
+			 
+			 <input type="submit" class="btn black" value="Send">
+		<div>
+		<div class="response-div">
+		<div>
+	<div>
+		
 </div>
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+                  let elems = document.querySelectorAll('.url-select');
+                  let instances = M.FormSelect.init(elems);
+                })
+	</script>
 {% endblock %}
