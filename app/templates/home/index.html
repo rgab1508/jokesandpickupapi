@@ -12,11 +12,11 @@ Home
 {% block content %}
 <div class="container">
 	<h1> Joke & pickup Line api</h1>
-	<div class="playground">
-		<h3>Live Demo</h3>
+	<h3>Live Demo</h3>
+		<div class="row">
 		<div class="url-div">
 			<p> Endpoints </p>
-			<div class="input-field col s12 m9">
+			<div class="input-field col s12 m10">
    					 <select class="url-select" >
       					<option value="" disabled selected>Choose your option</option>
 					{% if context.urls %}
@@ -26,38 +26,84 @@ Home
 					{% endif %}
    					 </select>
  			 </div>
-			 
-			 <input type="submit" class="btn black" value="Send">
-		<div>
-
+			 <div class="s12 m2 center">
+			 <input id="sendButton" type="submit" class="btn black" value="Send">
+	
+			 </div>
+		</div>
+		</div>
 		<div class="cur-url">
-			<p></p>
+			<p class="flow" ></p>
 		</div>
 		<div class="response-div">
+			<p> Response </p>
+			<pre>
+			<code class="json response-json">
+			</code>
+			</pre>
 		<div>
-	<div>
+	</div>
 		
 </div>
 <style>
 
 .cur-url {
-	height: 40px;
+	height: 50px;
 	background-color: rgb(51,51,51);
-	padding: 5px;
+	margin-top: 10px;
+	padding-top:5px;
+	padding-left:20px;
+	color: rgb(255,255,255);
+}
+
+
+.response-div {
+	height: 500px;
+	background-color: rgb(51,51,50);
+	color: white;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	padding: 10px;
+}
+
+.response-div > p {
+	font-size: 30px;
+	color: rgb(255,255,255);
+	overflow-x: scroll;
+	overflow-y: scroll;
+
+}
+
+.response-json {
+	background-color: rgb(51,51,51);
 	color: rgb(255,255,255);
 }
 
 </style>
 	<script>
 		document.addEventListener('DOMContentLoaded', function() {
-                  let urlSelectNode = document.querySelectorAll('.url-select');
-                  let instances = M.FormSelect.init(urlSelectNode);
+			hljs.initHighlightingOnLoad();
+			let urlSelectNode = document.querySelectorAll('.url-select');
+			let instances = M.FormSelect.init(urlSelectNode);
 	 	
-	          let urlSelect = document.querySelector(".url-select");
-		  let curUrl = document.querySelector(".cur-url");
-		  urlSelect.addEventListener("change",  function(e){
+			let urlSelect = document.querySelector(".url-select");
+			let curUrl = document.querySelector(".cur-url > p");
+			urlSelect.addEventListener("change",  function(e){
 			  curUrl.innerHTML = this.value;
-	          });
+			});
+
+			/* Handling the Send button event */
+			let sendButton = document.querySelector("#sendButton");
+			sendButton.addEventListener("click", function(e){
+				e.preventDefault();
+				let res = document.querySelector(".response-json");
+				let url = curUrl.innerHTML;
+				fetch(url)
+					.then(res => res.json())
+					.then(data => {
+						res.innerHTML = JSON.stringify(data, undefined, 2);
+					});
+			});
                 });
 	</script>
 {% endblock %}
