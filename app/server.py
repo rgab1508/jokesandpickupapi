@@ -29,32 +29,28 @@ def index():
                 "url": url_for("joke_controversial", time_filter="all")
             },
             {
-                "name": "Populat Jokes",
+                "name": "Popular Jokes",
                 "url": url_for("joke_rising", time_filter="all")
             },
             {
-                "name": "Random Joke",
-                "url": url_for("joke_random")
+                "name": "Random Pickup Line",
+                "url": url_for("pickup_random")
             },
             {
-                "name": "Random Joke",
-                "url": url_for("joke_random")
+                "name": "Recent Pickup Lines Submitted",
+                "url": url_for("pickup_new")
             },
             {
-                "name": "Random Joke",
-                "url": url_for("joke_random")
+                "name": "Top Pickup Lines",
+                "url": url_for("pickup_top", time_filter="all")
             },
             {
-                "name": "Random Joke",
-                "url": url_for("joke_random")
+                "name": "Controversial Pickup Lines",
+                "url": url_for("pickup_controversial", time_filter="all")
             },
             {
-                "name": "Random Joke",
-                "url": url_for("joke_random")
-            },
-            {
-                "name": "Random Joke",
-                "url": url_for("joke_random")
+                "name": "Popuar Pickup Lines",
+                "url": url_for("pickup_rising", time_filter="all")
             },
         ]
     context = {
@@ -173,7 +169,7 @@ def pickup_hot_limit(limit):
 
 
 @app.route('/pickup/controversial/<string:time_filter>')
-def pcikup_controversial(time_filter):
+def pickup_controversial(time_filter):
     return json.dumps(get_pickup_controversial(time_filter))
 
 @app.route('/pickup/controversial/<string:time_filter>/<int:limit>')
