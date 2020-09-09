@@ -12,11 +12,14 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet"
       href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/default.min.css">
-	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/highlight.min.js"></script>
-      <title>{% block title %} {% endblock %} </title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/highlight.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/prism.css') }}" >
+    <script src="{{ url_for('static', filename='js/prism.js') }}" ></script>
+    
+    <title>{% block title %} {% endblock %} </title>
     </head>
 
-    <body class="purple lighten-5">
+    <body class="grey lighten-3">
 		
 	{% block header %}{% endblock %}
 	{% block content %}
