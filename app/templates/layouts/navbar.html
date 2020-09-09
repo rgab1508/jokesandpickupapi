@@ -1,0 +1,23 @@
+<nav>
+    <div class="nav-wrapper grey darken-4">
+	    <a href="{{ url_for('index') }}" class="brand-logo">J&P API</a>
+      <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="https://github.com/rgab1508/jokesandpickupapi#jokes--pickup-line-api">Docs</a></li>
+        <li><a href="https://github.com/rgab1508/jokesandpickupapi">Github</a></li>
+      </ul>
+    </div>
+</nav>
+
+  <ul class="sidenav" id="mobile-nav">
+    <li><a href="https://github.com/rgab1508/jokesandpickupapi#jokes--pickup-line-api">Docs</a></li>
+    <li><a href="https://github.com/rgab1508/jokesandpickupapi">Github</a></li>
+</ul>
+
+
+<script >
+	document.addEventListener('DOMContentLoaded', function(){ 
+		let elems = document.querySelectorAll('.sidenav');
+		let instances = M.Sidenav.init(elems);
+  	});
+</script>

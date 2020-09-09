@@ -1,5 +1,5 @@
 import json
-from flask import Flask
+from flask import Flask, request, render_template, url_for
 
 from api.jokes import get_joke_from_id, get_joke_random, get_joke_top,get_joke_hot, get_joke_controversial, get_joke_rising, get_joke_new
 from api.pickup import get_pickup_from_id, get_pickup_random, get_pickup_top,get_pickup_hot, get_pickup_controversial, get_pickup_rising, get_pickup_new
@@ -11,8 +11,52 @@ app = Flask(__name__)
 ###### INDEX ROUTE ######
 @app.route('/')
 def index():
-	return 'Hello from Joke & Pickup line API'
-
+    urls = [
+            {
+                "name": "Random Joke",
+                "url": url_for("joke_random")
+            },
+            {
+                "name": "Recent Jokes submitted",
+                "url": url_for("joke_new")
+            },
+            {
+                "name": "Top Jokes",
+                "url": url_for("joke_top", time_filter="all")
+            },
+            {
+                "name": "Controverial Jokes",
+                "url": url_for("joke_controversial", time_filter="all")
+            },
+            {
+                "name": "Popular Jokes",
+                "url": url_for("joke_rising", time_filter="all")
+            },
+            {
+                "name": "Random Pickup Line",
+                "url": url_for("pickup_random")
+            },
+            {
+                "name": "Recent Pickup Lines Submitted",
+                "url": url_for("pickup_new")
+            },
+            {
+                "name": "Top Pickup Lines",
+                "url": url_for("pickup_top", time_filter="all")
+            },
+            {
+                "name": "Controversial Pickup Lines",
+                "url": url_for("pickup_controversial", time_filter="all")
+            },
+            {
+                "name": "Popuar Pickup Lines",
+                "url": url_for("pickup_rising", time_filter="all")
+            },
+        ]
+    context = {
+           "urls": urls
+        }
+    return render_template("home/index.html", context=context)
 
 ###########################
 ##      JOKES ROUTES     ##
@@ -125,7 +169,7 @@ def pickup_hot_limit(limit):
 
 
 @app.route('/pickup/controversial/<string:time_filter>')
-def pcikup_controversial(time_filter):
+def pickup_controversial(time_filter):
     return json.dumps(get_pickup_controversial(time_filter))
 
 @app.route('/pickup/controversial/<string:time_filter>/<int:limit>')
